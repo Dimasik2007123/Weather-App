@@ -1,0 +1,641 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>900</width>
+    <height>650</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>900</width>
+    <height>650</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1400</width>
+    <height>650</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Погода с геолокацией</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">font-family: Comic Sans MS</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(images/fon.jpeg);
+background-position: left, top;
+font-family: Comic Sans MS</string>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item row="0" column="0">
+     <widget class="QStackedWidget" name="stackedWidget">
+      <property name="cursor">
+       <cursorShape>ArrowCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: transparent;</string>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="Page1">
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item alignment="Qt::AlignHCenter">
+         <widget class="QFrame" name="frame">
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>200</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background: transparent;</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_2">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>25</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>115</number>
+           </property>
+           <item>
+            <widget class="QPushButton" name="button_locate">
+             <property name="minimumSize">
+              <size>
+               <width>300</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>238</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>Comic Sans MS</family>
+               <pointsize>10</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton{
+	background: #3eb9ed;
+	background-image: none;
+	border-radius: 5px;
+	color:black;
+}
+QPushButton:hover{
+	background: #2ca1d4;
+	background-image: none;
+}
+QPushButton:pressed {
+    background: #157eab;
+	background-image: none;;
+}
+</string>
+             </property>
+             <property name="text">
+              <string>определить местоположение</string>
+             </property>
+             <property name="icon">
+              <iconset resource="res.qrc">
+               <normaloff>:/icons/icons/my_location_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg</normaloff>:/icons/icons/my_location_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg</iconset>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="line_city">
+             <property name="minimumSize">
+              <size>
+               <width>300</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>238</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">border-radius: 8px;
+border: 2px solid black;
+color: black;
+</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="placeholderText">
+              <string>введите название города</string>
+             </property>
+             <property name="clearButtonEnabled">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="button_search">
+             <property name="minimumSize">
+              <size>
+               <width>300</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>238</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>Comic Sans MS</family>
+               <pointsize>10</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton{
+	background: #3eb9ed;
+	background-image: none;
+	font-weight: bold;
+	border-radius: 5px;
+	color: black;
+}
+QPushButton:hover{
+	background: #2ca1d4;
+	background-image: none;
+	font-weight: bold;
+	border-radius: 5px;
+}
+QPushButton:pressed {
+    background: #157eab;
+	background-image: none;
+	font-weight: bold;
+	border-radius: 5px;
+}</string>
+             </property>
+             <property name="text">
+              <string>поиск</string>
+             </property>
+             <property name="icon">
+              <iconset resource="res.qrc">
+               <normaloff>:/icons/icons/search_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg</normaloff>:/icons/icons/search_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg</iconset>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item alignment="Qt::AlignHCenter">
+         <widget class="QLabel" name="label">
+          <property name="font">
+           <font>
+            <family>Comic Sans MS</family>
+            <pointsize>14</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background: #9badb0;
+border: 2px solid black;
+align: center;
+margin-bottom: 120%;
+color: black;
+border-radius: 50px;</string>
+          </property>
+          <property name="text">
+           <string>Добро пожаловать в приложение &quot;Погода с геолокацией&quot;. 
+Чтобы увидеть данные о погоде в вашем городе,
+нажмите кнопку &quot;Определить местоположение&quot; в верхней части экрана.
+Если же вы хотите посмотреть погоду в другом городе,
+введите его название вручную и нажмите &quot;Поиск&quot;. </string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="Page2">
+       <property name="styleSheet">
+        <string notr="true">background: transparent;</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_5">
+        <item>
+         <widget class="QFrame" name="frame">
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <item alignment="Qt::AlignHCenter">
+            <widget class="QTableView" name="table_favor">
+             <property name="styleSheet">
+              <string notr="true">QTableView{
+	border: 2px solid rgb(85, 170, 0);
+	border-bottom-right-radius: 7px;
+	border-bottom-left-radius: 7px;
+	border-top-right-radius: 7px;
+	border-top-left-radius: 7px;
+}
+QTableView::section{
+	background: rgba(0, 255, 0, 80);
+	font-size: 14pt;
+}
+QTableView::item{
+	background: rgba(0, 255, 0, 80);
+	font-size: 12pt;
+}
+QTableView::item:selected{
+	background: rgba(0, 255, 0);
+	font-size: 12pt;
+}
+</string>
+             </property>
+             <property name="horizontalScrollBarPolicy">
+              <enum>Qt::ScrollBarAlwaysOff</enum>
+             </property>
+             <attribute name="horizontalHeaderMinimumSectionSize">
+              <number>150</number>
+             </attribute>
+            </widget>
+           </item>
+           <item alignment="Qt::AlignHCenter">
+            <widget class="QPushButton" name="button_delete">
+             <property name="styleSheet">
+              <string notr="true">background: qlineargradient(spread:reflect, x1:0.511, y1:0.494409, x2:1, y2:1, stop:0 rgba(184, 136, 255, 255), stop:1 rgba(255, 255, 255, 255));
+color: black;</string>
+             </property>
+             <property name="text">
+              <string>Посмотреть погоду</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="Page3">
+       <property name="styleSheet">
+        <string notr="true">background: grey;</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_3">
+        <item row="0" column="0" alignment="Qt::AlignTop">
+         <widget class="QCheckBox" name="checkBox">
+          <property name="minimumSize">
+           <size>
+            <width>100</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">margin-bottom: 200px;</string>
+          </property>
+          <property name="text">
+           <string>Тёмная тема</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="Page4">
+       <property name="styleSheet">
+        <string notr="true">background: transparent;</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_8">
+        <item>
+         <layout class="QGridLayout" name="gridLayout_2">
+          <item row="0" column="0">
+           <widget class="QFrame" name="frame">
+            <layout class="QVBoxLayout" name="verticalLayout_3">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_2">
+               <property name="spacing">
+                <number>0</number>
+               </property>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_3">
+               <property name="spacing">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="QLabel" name="label_city">
+                 <property name="styleSheet">
+                  <string notr="true">border: 2px solid black;
+font-size: 20pt;
+color: black;</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="label_country">
+                 <property name="styleSheet">
+                  <string notr="true">border: 2px solid black;
+font-size: 20pt;
+color: black;</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="label_desc">
+                 <property name="styleSheet">
+                  <string notr="true">border: 2px solid black;
+font-size: 20pt;
+color: black;</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="label_temp">
+                 <property name="styleSheet">
+                  <string notr="true">border: 2px solid black;
+font-size: 20pt;
+color: black;</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="label_feel">
+                 <property name="styleSheet">
+                  <string notr="true">border: 2px solid black;
+font-size: 20pt;
+color: black;</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <layout class="QVBoxLayout" name="verticalLayout_6">
+            <item>
+             <widget class="QLabel" name="label_7">
+              <property name="styleSheet">
+               <string notr="true">border: 2px solid black;
+font-size: 12pt;
+color: black;</string>
+              </property>
+              <property name="text">
+               <string>Прогноз погоды на 3 дня</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTableView" name="table_forecast_weather">
+              <property name="minimumSize">
+               <size>
+                <width>874</width>
+                <height>446</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>446</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QTableView{
+	border: 2px solid rgb(85, 170, 0);
+}
+QTableView::section{
+	background: rgba(0, 255, 0, 80);
+	font-size: 14pt;
+}
+QTableView::item{
+	background: rgba(0, 255, 0, 80);
+	font-size: 12pt;
+}</string>
+              </property>
+              <attribute name="horizontalHeaderVisible">
+               <bool>false</bool>
+              </attribute>
+              <attribute name="horizontalHeaderHighlightSections">
+               <bool>false</bool>
+              </attribute>
+              <attribute name="verticalHeaderVisible">
+               <bool>false</bool>
+              </attribute>
+              <attribute name="verticalHeaderHighlightSections">
+               <bool>false</bool>
+              </attribute>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QFrame" name="frame">
+      <property name="styleSheet">
+       <string notr="true">background-image: none;
+background: rgba(0, 0, 0, 80);</string>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <property name="spacing">
+        <number>5</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QPushButton" name="button_home">
+         <property name="font">
+          <font>
+           <family>Comic Sans MS</family>
+           <pointsize>22</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+	background: rgba(0, 0, 0, 80);
+}
+QPushButton:pressed{
+	background:rgba(0,0,0,100);
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="res.qrc">
+           <normaloff>:/icons/icons/home_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg</normaloff>:/icons/icons/home_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="button_favorites">
+         <property name="font">
+          <font>
+           <family>Comic Sans MS</family>
+           <pointsize>22</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+	background: rgba(0,0,0,80);
+}
+QPushButton:pressed{
+	background: rgba(0,0,0,100);
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="res.qrc">
+           <normaloff>:/icons/icons/history_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg</normaloff>:/icons/icons/history_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="button_settings">
+         <property name="font">
+          <font>
+           <family>Comic Sans MS</family>
+           <pointsize>22</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+	background: rgba(0, 0, 0, 80);
+}
+QPushButton:pressed{
+	background: rgba(0,0,0,100);
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="res.qrc">
+           <normaloff>:/icons/icons/settings_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg</normaloff>:/icons/icons/settings_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources>
+  <include location="res.qrc"/>
+ </resources>
+ <connections/>
+</ui>

@@ -1,0 +1,22 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>icons/history_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg</file>
+    <file>icons/add_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg</file>
+    <file>icons/arrow_back_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg</file>
+    <file>icons/close_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg</file>
+    <file>icons/delete_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg</file>
+    <file>icons/favorite_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg</file>
+    <file>icons/favorite_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg</file>
+    <file>icons/home_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg</file>
+    <file>icons/home_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg</file>
+    <file>icons/hourglass_empty_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg</file>
+    <file>icons/my_location_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg</file>
+    <file>icons/search_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg</file>
+    <file>icons/settings_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg</file>
+    <file>icons/settings_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg</file>
+    <file>images/load.gif</file>
+    <file>images/fon.jpeg</file>
+    <file>images/fon_black.jpg</file>
+    <file>images/fon_black1.jpg</file>
+  </qresource>
+</RCC>
